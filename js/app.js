@@ -1,44 +1,36 @@
-// const themeToggle = document.getElementById("theme-switch");
-// const body = document.body;
 
-// themeToggle.addEventListener("change", () => {
-//     if (themeToggle.checked) {
-//         body.classList.add("dark");
-//         body.classList.remove("light");
-//     } else {
-//         body.classList.add("light");
-//         body.classList.remove("dark");
-//     }
-// });
+let theme = localStorage.getItem('theme');      
+const themeToggle = document.querySelector('#theme-toggle')
+const themeRemove = document.querySelector('.theme-remove')
 
-import {toDarkMode, toLightMode, toSystemMode} from './theme';
- 
-window.toDarkMode = toDarkMode;
-window.toLightMode = toLightMode;
-window.toSystemMode = toSystemMode;
-
-
-function updateTheme() {
-    if (! ('theme', in localStorage) ) {
-        localStorage.theme = 'system';
-    }
+const toDark = function() {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
 }
 
-switch(localStorage.theme) {
-    case 'system':
-        if (window.matchMedia('(prefers-color-scheme: dark').matches) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        document.documentElement.setAttribute('color-theme', 'system');
-        break;
-    case 'dark':
+const toLight = function() {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+}
+
+const toSystem = function() {
+    localStorage.removeItem('theme');
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark');
-        document.documentElement.setAttribute('color-theme', 'dark');
-        break;
-    case 'light':
+    } else {
         document.documentElement.classList.remove('dark');
-        document.documentElement.setAttribute('color-theme', 'light');
-        break;
-}
+    }
+}   
+
+themeToggle.addEventListener('click', function() {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        toLight();
+    } else {
+        toDark();
+    }
+});
+
+themeRemove.addEventListener('click', function() {
+    toSystem();
+});

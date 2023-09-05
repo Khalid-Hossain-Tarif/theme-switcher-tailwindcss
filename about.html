@@ -3,31 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theme switcher tailwind</title>
+    <title>About - Theme switcher tailwind</title>
     <link href="./dist/output.css" rel="stylesheet" />
   </head>
-  
-  <body class="p-4 pt-10 bg-slate-300 dark:bg-slate-900">
+  <body class="bg-slate-300 dark:bg-slate-900 p-4 pt-10">
     <div class="w-full lg:w-[700px] mx-auto ">
-      <div class="flex justify-between items-center gap-2">
-        <h1 class="text-2xl font-semibold mb-4 text-green-600 dark:text-white">
-          Theme Switcher
-        </h1>
-        <div class="flex items-center gap-4">
-          <a class="text-base text-black dark:text-white font-semibold" href="/">Home</a>
-          <a class="text-base text-black dark:text-white font-semibold" href="about.html">About</a>
+        <div class="flex justify-between items-center gap-2">
+          <h1 class="text-2xl font-semibold mb-4 text-blue-600">
+            About Theme Switcher
+          </h1>
+          <div class="flex items-center gap-4">
+            <a class="text-base text-black dark:text-white font-semibold" href="/">Home</a>
+            <a class="text-base text-black dark:text-white font-semibold" href="about.html">About</a>
+          </div>
         </div>
+  
+        <label for="theme-toggle" class="cursor-pointer">
+          <input type="checkbox" id="theme-toggle" class="hidden" />
+          <div class="toggle-wrapper bg-black w-14 h-7 rounded-full p-1 relative">
+            <div class="toggle-thumb bg-white w-5 h-5 rounded-full absolute left-1"></div>
+          </div>
+        </label>
       </div>
 
-      <label for="theme-toggle" class="cursor-pointer">
-        <input type="checkbox" id="theme-toggle" class="hidden" />
-        <div class="toggle-wrapper bg-black w-14 h-7 rounded-full p-1 relative">
-          <div class="toggle-thumb bg-white w-5 h-5 rounded-full absolute left-1"></div>
-        </div>
-      </label>
-    </div>
-
-    <div class="bg-black dark:bg-slate-200 w-full lg:w-[700px] mx-auto my-7 p-7 rounded-2xl">
+    <div class="bg-dark dark:bg-slate-200 w-full lg:w-[700px] mx-auto my-7 p-7 rounded-2xl">
       <p class="text-white dark:text-black">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo mollitia
         provident quidem facere rerum neque praesentium fugit, aperiam nemo
@@ -55,23 +54,6 @@
       </p>
       <p class="mt-5 text-white dark:text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, natus!</p>
     </div>
-
-
-<!-- 
-    <div class="bg-slate-300 dark:bg-slate-900 min-h-screen p-12">
-      <h1 class="text-3xl mt-10 text-black dark:text-white">Click on the button below to toggle between light and dark state.</h1>
-    
-      <p class="text-base mt-2 mb-2 text-black dark:text-white">The default state will be based on whether your system OS is set to Dark or Light. It will remember your state when you refresh.</p>
-        
-      <button class="theme-toggle">
-        <span class="text-xl bg-red-700 dark:bg-red-400 p-6 font-bold block dark:hidden text-slate-200">Light</span>
-        <span class="text-xl bg-red-700 dark:bg-red-400 p-6 font-bold hidden dark:block text-slate-900">Dark</span>
-      </button>
-      <br>
-      <button class="theme-remove">
-        <span class="text-slate-600 dark:text-slate-400 underline">Revert to System Theme</span>
-      </button>
-    </div> -->
 
     <script src="./js/app.js"></script>
   </body>
