@@ -14,9 +14,9 @@ body.dark {
 }
 
 #theme-switch:checked + .toggle-wrapper {
-    @apply bg-red-600
+    @apply bg-white
 }
 
 #theme-switch:checked + .toggle-wrapper .toggle-thumb {
-    @apply left-auto right-1
+    @apply left-auto right-1 bg-black
 }
