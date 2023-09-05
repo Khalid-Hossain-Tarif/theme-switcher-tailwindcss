@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* styles.css */
-body.light {
+/* body.light {
     background-color: #f3f4f6;
     color: #333;
 }
@@ -19,4 +19,18 @@ body.dark {
 
 #theme-switch:checked + .toggle-wrapper .toggle-thumb {
     @apply left-auto right-1 bg-black
+}
+
+#header__sun, #header__moon, #header__indeterminate {
+    display: none;
+} */
+ 
+html[color-theme="dark"] #header__moon {
+    display: block;
+}
+html[color-theme="light"] #header__sun {
+    display: block;
+}
+html[color-theme="system"] #header__indeterminate {
+    display: block;
 }
